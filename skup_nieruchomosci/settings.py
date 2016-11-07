@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     ##################################
 
     'formularz_kontaktowy',
-    #'opinie',
+    'opinie',
 
     ##################################
 

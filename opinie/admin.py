@@ -1,9 +1,9 @@
 # coding: utf-8
 
 from django.contrib import admin
-from models import kontakt
+from models import opinia
 
-class KontaktAdmin(admin.ModelAdmin):
-    list_display = ('imie_i_nazwisko', 'email', 'telefon', 'miejscowosc', 'rodzaj_nieruchomosci', 'uwagi')
+class OpinieAdmin(admin.ModelAdmin):
+    list_display = ('imie', 'ocena', 'tresc', 'data')
     pass
-admin.site.register(kontakt, KontaktAdmin)
+admin.site.register(opinia, OpinieAdmin)

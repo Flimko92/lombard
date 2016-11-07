@@ -5,30 +5,28 @@ from django.core.urlresolvers import reverse_lazy
 
 class opinia(models.Model):
 
-    MIESZKANIE = 'M'
-    DOM = 'D'
-    DZIALKA = 'P'
-    INNE = 'I'
+    SUPER = 'S'
+    DOBRZE = 'D'
+    ZLE = 'Z'
+    TRAGEDIA = 'T'
 
     RODZAJ=(
-        (MIESZKANIE, ('Mieszkanie')),
-        (DOM, 'Dom'),
-        (DZIALKA, 'Działka'),
-        (INNE, 'Inne'),
+        (SUPER, ('Super')),
+        (DOBRZE, 'Dobrze'),
+        (ZLE, 'Źle'),
+        (TRAGEDIA, 'Tragedia'),
     )
 
-    imie_i_nazwisko = models.CharField(max_length=100)
-    email = models.EmailField()
-    telefon = models.PositiveIntegerField()
-    miejscowosc = models.CharField(max_length=150)
-    rodzaj_nieruchomosci = models.CharField(choices=RODZAJ, max_length=1, blank=True)
-    uwagi = models.TextField(max_length=500)
+    imie = models.CharField(max_length=100)
+    ocena = models.CharField(choices=RODZAJ, max_length=1, blank=True)
+    tresc = models.TextField(max_length=500)
+    data = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['imie_i_nazwisko']
+        ordering = ['data']
 
     def __unicode__(self):
-        return u"Imie i nazwisko: %s" % (self.imie_i_nazwisko)
+        return u"Imie: %s" % (self.imie)
 
     def get_absolute_url(self):
-        return reverse_lazy('kontakt:wyslij_kontakt', kwargs={})
+       return reverse_lazy('opinie:lista_opini', kwargs={})

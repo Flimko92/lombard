@@ -6,7 +6,7 @@
 
 
   <head>
-<title>{% block title %}Aplikacja Filmowa{%endblock%}</title>
+<title>{% block title %}Skup Nieruchomości{%endblock%}</title>
 	{#% providers_media_js %#}
 	{% bootstrap_css %}
 	{% bootstrap_javascript %}
@@ -32,7 +32,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                   <li><a href="{% url 'kontakt:wyslij_kontakt' %}">Kontakt</a></li>
-                  <li><a href="#">Opinie</a></li>
+                  <li><a href="{% url 'opinie:lista_opini' %}">Opinie</a></li>
               </ul>
             </div>
           </div>

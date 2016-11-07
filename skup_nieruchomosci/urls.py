@@ -20,5 +20,6 @@ from views import HomeTemplateView
 urlpatterns = [
     url(r'^$', HomeTemplateView.as_view(), name='home_page'),
     url(r'^kontakt/', include('formularz_kontaktowy.urls', namespace='kontakt')),
+    url(r'^opinie/', include('opinie.urls', namespace='opinie')),
     url(r'^admin/', admin.site.urls),
 ]
