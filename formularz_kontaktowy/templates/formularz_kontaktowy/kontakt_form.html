@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form method="POST" action="" class="form-horizontal"> {% csrf_token %}
+                <div class="form-group" align="center">
+                    {{ form|crispy }}
+                    <input type='submit' value="Wyślij" class='btn btn-primary' />
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <h1>Numer telefonu</h1>
+            <h3>508 177 196</h3>
+            <br>
+            <h1>Częstochowa</h1>
+            <h3>ul. Dąbroskiego 6</h3>
+            <br>
+            <h1>e-mail</h1>
+            <h3>biura@skup.pl</h3>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
