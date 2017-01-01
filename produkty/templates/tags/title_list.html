@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+<h1>Lista dostępnych filmów:</h1>
+
+    {% for title in object_list %}
+    <h2>{{title.movie_title}}<a href="{% url 'scenariusze:scene_list' %}"> [lista scen] </a> <a href="{% url 'scenariusze:shot_list' %}">[lista ujęć]</a></h2></li>
+    {% endfor %}
+
+</center>
+{% endblock %}

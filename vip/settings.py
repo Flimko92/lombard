@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'formularz_kontaktowy',
     'opinie',
+    'produkty',
 
     ##################################
 
@@ -62,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'skup_nieruchomosci.urls'
+ROOT_URLCONF = 'vip.urls'
 
 TEMPLATES = [
     {
@@ -80,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'skup_nieruchomosci.wsgi.application'
+WSGI_APPLICATION = 'vip.wsgi.application'
 
 
 # Database
@@ -131,4 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

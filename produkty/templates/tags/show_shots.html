@@ -1,0 +1,48 @@
+{% load scenariusze_tags %}
+
+
+<div class="container-fluid" align="center">
+
+    <div class="row">
+
+        {% for shot in shots %}
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+
+                <div class="thumbnail">
+
+                    <div class="caption"><a href="{% url 'scenariusze:shot_detail' shot.id %}"><h3>Numer ujęcia: {{ shot.nr_ujecia }}</h3></a></div>
+                    <table class="table table-striped table-bordered" style="text-align:center">
+                        <tr>
+                            <th>Plan</th>
+                            <td>{{ shot.get_plan_display }}</td>
+                        </tr>
+                        <tr>
+                            <th>Typ ujęcia</th>
+                            <td>{{shot.typ_ujecia }}</td>
+                        </tr>
+                        <tr>
+                            <th>Opis ujęcia</th>
+                            <td>{{shot.opis_ujecia }}</td>
+                        </tr>
+                    </table>
+
+                    <div class="btn-group">
+                        <a href="{% url 'scenariusze:shot_update' shot.id %}" class="btn btn-primary" role="button">Edytuj ujęcie</a>
+                        <a href="{% url 'scenariusze:shot_delete' shot.id %}" class="btn btn-primary" role="button">Usuń ujęcie</a>
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="{% url 'blok_informacji:information_add' %}" class="btn btn-primary" role="button">Dodaj zadanie</a>
+                        <a href="{% url 'blok_informacji:information_list' %}" class="btn btn-primary" role="button">Lista zadań</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>

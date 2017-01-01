@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container" align="center"><h1>Dodaj scene:</h1>
+<div class="form-group" style="width:40%">
+<form method="POST" action=""> {% csrf_token %}
+
+{{ form|crispy }}
+<input type='submit' value="Dodaj scenariusz" class='btn btn-primary' />
+</form>
+</div>
+</div>
+{% endblock %}
+

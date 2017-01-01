@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" align="center">
+
+    <h1>Scena: {{object.scene_number}}</h1>
+
+    <h2>
+        {{object.get_place_display}},
+        {{object.place_name}},
+        {{object.get_time_of_day_display}}
+    </h2>
+
+
+</div>
+
+    <br>
+
+
+
+{% endblock %}
