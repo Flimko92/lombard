@@ -8,17 +8,17 @@
 
 </div>
 
-<div class="container-fluid" align="center">
+<div class="container" align="center">
 
     <div class="row">
 
         {% for product_detail in object_list %}
 
-        <div class="col-sm-4 col-lg-3">
+        <div class="col-md-3">
 
             <div class="thumbnail" >
 
-                <a href="{% url 'produkty:product_detail_detail' product_detail.id %}"><h2>{{ product_detail.name }}</h2></a>
+                <a href="{% url 'produkty:product_detail_detail' product_detail.id %}"><h2>{{ product_detail.get_producent_display }} {{ product_detail.name }}</h2></a>
                 <img src="{{product_detail.photo.url}}"  class="img-responsive"><br> <br>
 
             </div>

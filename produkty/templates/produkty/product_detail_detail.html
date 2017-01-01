@@ -12,22 +12,58 @@
             <a href="{{object.photo.url}}"><img src="{{object.photo.url}}"  class="img-responsive"></a><br>
         </div>
         <div class="col-md-6">
-            <h2 align="left">{{object.name}}</h2>
+            <h2 align="left">{{object.get_producent_display}} {{object.name}}</h2>
             <h3 align="left">{{object.prize}} zł</h3><br>
-            <p>{{object.desription}}</p><br>
-            <table class="table table-striped table-bordered" style="text-align:center">
-                {% if object.material %}
-                <tr>
-                    <th>Kruszec:</th>
-                    <td>{{object.get_material_display}}</td>
-                </tr>
-                {% endif %}
-                {% if object.producent %}
-                <tr>
-                    <th>Producent:</th>
-                    <td>{{object.get_producent_display}}</td>
-                </tr>
-                {% endif %}
+            <p class="text-justify">{{object.desription}}</p><br>
+            {% if object.count > 2 %}
+            <h4>Produkt dostępny</h4>
+            {% else %}
+            <h4>Produkt niedostępny</h4>
+            {% endif %}
+            <table class="table table-striped">
+                <thead align="left"><h3>Specyfikacja:</h3></thead>
+                <tbody>
+                    {% if object.producent %}
+                    <tr>
+                        <th>Producent:</th>
+                        <td>{{object.get_producent_display}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if object.system %}
+                    <tr>
+                        <th>System:</th>
+                        <td>{{object.get_system_display}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if object.size %}
+                    <tr>
+                        <th>Przekątna ekranu:</th>
+                        <td>{{object.size}} "</td>
+                    </tr>
+                    {% endif %}
+                    {% if object.memory %}
+                    <tr>
+                        <th>Pamięć wbudowana:</th>
+                        <td>{{object.memory}} GB</td>
+                    </tr>
+                    {% endif %}
+                    {% if object.type %}
+                    <tr>
+                        <th>Kategoria:</th>
+                        <td>{{object.get_type_display}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if object.material %}
+                    <tr>
+                        <th>Kruszec:</th>
+                        <td>{{object.get_material_display}}</td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <th>Numer katalogowy:</th>
+                        <td>{{object.nr_kat}}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
