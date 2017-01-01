@@ -41,9 +41,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'produkty:bizuteria_list' %}">Biżuteria</a></li>
                             <li>Tablety</li>
+                            <li><a href="{% url 'produkty:product_detail_list' %}">Wszystkie produkty</a></li>
                         </ul>
                   </li>
-                  <li><a href="{% url 'produkty:product_detail_list' %}">Produkty</a></li>
                   <li><a href="{% url 'kontakt:wyslij_kontakt' %}">Kontakt</a></li>
                   <li><a href="{% url 'opinie:lista_opini' %}">Opinie</a></li>
               </ul>
@@ -52,7 +52,7 @@
         </nav>
 
       </div>
-    </div>
+      </div>
 <br><br><br><br><br>
   {% bootstrap_messages %}
 

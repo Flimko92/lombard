@@ -3,20 +3,18 @@
 {% block content %}
 {% load staticfiles %}
 
-<div class="container" align="center">
 
-    <h2>{{object.name}}</h2><br>
-
-</div>
-<br>
-
-<div class="container-fluid">
-
+<div class="container">
+    <br>
     <div class="row">
 
-        <div class="col-lg-6 col-lg-offset-3">
-            <h4 align="center">Storyboard:</h4>
+        <div class="col-md-6">
             <a href="{{object.photo.url}}"><img src="{{object.photo.url}}"  class="img-responsive"></a><br>
+        </div>
+        <div class="col-md-6">
+            <h2 align="left">{{object.name}}</h2>
+            <h3 align="left">{{object.prize}} zł</h3><br>
+            <p>{{object.desription}}</p><br>
             <table class="table table-striped table-bordered" style="text-align:center">
                 {% if object.material %}
                 <tr>
