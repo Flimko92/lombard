@@ -92,6 +92,7 @@ class product_detail (models.Model):
     desription = models.TextField()
     prize = models.DecimalField(max_digits=8, decimal_places=2)
     count = models.PositiveIntegerField()
+    pub_date = models.DateField(auto_now_add=True, auto_now=False)
 
     class Meta:
         ordering = ['nr_kat']

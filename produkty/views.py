@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from django.views.generic import ListView, DetailView
+from django.core.paginator import Paginator
 from models import product_detail
 
 
@@ -12,16 +13,20 @@ class BizuteriaListView (ListView):
     template_name = 'produkty/bizuteria_list.html'
 
 class TelefonyListView (ListView):
-    model = product_detail
+    queryset = product_detail.objects.filter(type_of_product='TE')
+    template_name = 'produkty/telefony_list.html'
 
 class TabletyListView (ListView):
-    model = product_detail
+    queryset = product_detail.objects.filter(type_of_product='TA')
+    template_name = 'produkty/tablety_list.html'
 
 class LaptopyListView (ListView):
-    model = product_detail
+    queryset = product_detail.objects.filter(type_of_product='LA')
+    template_name = 'produkty/laptopy_list.html'
 
 class InneListView (ListView):
-    model = product_detail
+    queryset = product_detail.objects.filter(type_of_product='IN')
+    template_name = 'produkty/inne_list.html'
 
 class Product_detailDetailView (DetailView):
     model = product_detail

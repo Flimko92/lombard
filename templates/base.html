@@ -40,10 +40,15 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'produkty:bizuteria_list' %}">Biżuteria</a></li>
-                            <li>Tablety</li>
+                            <li><a href="{% url 'produkty:telefony_list' %}">Telefony</a></li>
+                            <li><a href="{% url 'produkty:tablety_list' %}">Tablety</a></li>
+                            <li><a href="{% url 'produkty:laptopy_list' %}">Laptopy</a></li>
+                            <li><a href="{% url 'produkty:inne_list' %}">Inne</a></li>
                             <li><a href="{% url 'produkty:product_detail_list' %}">Wszystkie produkty</a></li>
                         </ul>
                   </li>
+                  <li><a href="{% url 'skup_zlota' %}">Skup Złota</a></li>
+                  <li><a href="{% url 'skup_srebra' %}">Skup Srebra</a></li>
                   <li><a href="{% url 'kontakt:wyslij_kontakt' %}">Kontakt</a></li>
                   <li><a href="{% url 'opinie:lista_opini' %}">Opinie</a></li>
               </ul>
