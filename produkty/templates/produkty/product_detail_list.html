@@ -12,6 +12,12 @@
     <div class="row">
 
         <div class="col-md-4" align="left">
+
+        <form method='GET' action=''>
+            <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
+            <input type='submit' value='Search' />
+        </form>
+
             <h3>Kategorie</h3>
             <ul style="font-size:16px">
                 <li><a href="{% url 'produkty:bizuteria_list' %}"> Biżuteria</a></li>
@@ -20,7 +26,6 @@
                 <li><a href="{% url 'produkty:laptopy_list' %}"> Laptopy </a></li>
                 <li><a href="{% url 'produkty:inne_list' %}"> Inne </a></li>
             </ul>
-
         </div>
         {% for product_detail in object_list %}
 

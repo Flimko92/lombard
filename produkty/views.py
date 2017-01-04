@@ -3,10 +3,20 @@
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 from models import product_detail
+from django.db.models import Q
 
 
 class Product_detailListView (ListView):
     model = product_detail
+    queryset = product_detail.objects.all()
+    def get(self, request):
+        query = request.GET.get("q")
+        product_detail.objects.filter(
+        Q(name__icontains=query)|
+        Q(producent__icontains=query)|
+        Q(type_of_product__icontains=query) |
+        Q(description__icontains=query)
+        ).distinct()
 
 class BizuteriaListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='BI')

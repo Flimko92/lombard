@@ -9,3 +9,6 @@ class SkupZlotaTemplateView (TemplateView):
 
 class SkupSrebraTemplateView (TemplateView):
     template_name = 'skup_srebra.html'
+
+class ONasTemplateView (TemplateView):
+    template_name = 'o_nas.html'
