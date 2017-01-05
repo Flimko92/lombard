@@ -1,10 +1,13 @@
 # coding: utf-8
 from django.conf.urls import url
-from views import (Product_detailListView, Product_detailDetailView, BizuteriaListView, TelefonyListView, TabletyListView, LaptopyListView, InneListView)
+from views import (Product_detailListView, Product_detailDetailView, BizuteriaListView, TelefonyListView,
+                   TabletyListView, LaptopyListView, InneListView, Product_detailCreateView
+                  )
 
 urlpatterns = [
 
     url(r'^product_detail_list/$', Product_detailListView.as_view(), name='product_detail_list'),
+    url(r'^product_detail_list/add/$', Product_detailCreateView.as_view(), name='product_detail_add'),
     url(r'^bizuteria_list/$', BizuteriaListView.as_view(), name='bizuteria_list'),
     url(r'^telefony_list/$', TelefonyListView.as_view(), name='telefony_list'),
     url(r'^tablety_list/$', TabletyListView.as_view(), name='tablety_list'),

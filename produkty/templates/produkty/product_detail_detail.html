@@ -2,20 +2,24 @@
 
 {% block content %}
 {% load staticfiles %}
-
+{% load static %}
 
 <div class="container">
     <br>
     <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-6" align="center">
+            {% if object.photo %}
             <a href="{{object.photo.url}}"><img src="{{object.photo.url}}"  class="img-responsive" ></a><br>
+            {% else %}
+            <img src="/media/b.jpg" class="img-responsive"/><br>
+            {% endif %}
         </div>
         <div class="col-md-6">
             <h2 align="left">{{object.get_producent_display}} {{object.name}}</h2>
             <h3 align="left">{{object.prize}} zł</h3><br>
             <p class="text-justify">{{object.desription}}</p><br>
-            {% if object.count > 2 %}
+            {% if object.count >= 1 %}
             <h4>Produkt dostępny</h4>
             {% else %}
             <h4>Produkt niedostępny</h4>

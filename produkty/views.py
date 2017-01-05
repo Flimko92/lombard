@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 from models import product_detail
 from django.db.models import Q
@@ -8,15 +8,12 @@ from django.db.models import Q
 
 class Product_detailListView (ListView):
     model = product_detail
-    queryset = product_detail.objects.all()
-    def get(self, request):
-        query = request.GET.get("q")
-        product_detail.objects.filter(
-        Q(name__icontains=query)|
-        Q(producent__icontains=query)|
-        Q(type_of_product__icontains=query) |
-        Q(description__icontains=query)
-        ).distinct()
+
+class Product_detailCreateView (CreateView):
+    model = product_detail
+    fields = ['nr_kat','name', 'type_of_product', 'producent', 'system', 'size', 'memory', 'type', 'material',
+              'photo', 'desription', 'prize', 'count',
+              ]
 
 class BizuteriaListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='BI')

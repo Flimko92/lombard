@@ -101,7 +101,7 @@ class product_detail (models.Model):
         return u"%s / %s" % (self.nr_kat, self.name)
 
     def get_absolute_url(self):
-        return reverse_lazy('produkty:product_list', kwargs={})
+        return reverse_lazy('produkty:product_detail_list', kwargs={})
 
 
 

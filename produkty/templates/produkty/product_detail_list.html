@@ -2,21 +2,16 @@
 
 {% block content %}
 
-<div class="container" align="center">
 
-
-</div>
 
 <div class="container" align="center">
 
+    <a href="{% url 'produkty:product_detail_add' %}" class="btn btn-primary btn-lg" role="button">Dodaj produkt</a>
+    <br>
+    <br>
     <div class="row">
 
         <div class="col-md-4" align="left">
-
-        <form method='GET' action=''>
-            <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
-            <input type='submit' value='Search' />
-        </form>
 
             <h3>Kategorie</h3>
             <ul style="font-size:16px">
@@ -30,11 +25,13 @@
         {% for product_detail in object_list %}
 
         <div class="col-md-2">
-
+                {% if product_detail.photo %}
                 <a href="{% url 'produkty:product_detail_detail' product_detail.id %}" class="thumbnail"> <img src="{{product_detail.photo.url}}"  class="img-responsive"></a>
+                {% else %}
+                <a href="{% url 'produkty:product_detail_detail' product_detail.id %}" class="thumbnail"> <img src="/media/b.jpg"  class="img-responsive"></a>
+                {% endif %}
                 <a href="{% url 'produkty:product_detail_detail' product_detail.id %}"><h3 align="left">{{ product_detail.get_producent_display }} {{ product_detail.name }}</h3></a>
                 <p align="left">{{product_detail.prize}} zł</p>
-
         </div>
 
         {% endfor %}

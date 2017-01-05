@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container" align="center">
+<h1>Dodaj przedmiot:</h1>
+<br>
+<div class="row">
+
+
+    <form method="POST" action=""> {% csrf_token %}
+    <div class="col-md-12">
+        <div class="form-group" style="width:40%">
+            {{ form.non_field_errors }}
+            <h3>Numer katalogowy:</h3>
+            {{ form.nr_kat.errors }}
+            {{ form.nr_kat }}
+            <br>
+            <h3>Nazwa produktu</h3>
+            {{ form.name }}
+            <h3>Zdjęcie</h3>
+            {{ form.photo }}
+            <h3>Opis</h3>
+            {{ form.desription }}
+            <h3>Cena</h3>
+            {{ form.prize }}
+            <h3>Ilość sztuk na magazynie:</h3>
+            {{ form.count }}
+            <h3>Rodzaj produktu</h3>
+            {{ form.type_of_product }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>Dane dodatkowe dla biżuterii:</h2>
+        <div class="form-group" style="width:100%">
+            <h3>Kruszec:</h3>
+            {{ form.material }}
+            <h3>Rodzaj:</h3>
+            {{ form.type }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>Dane dodatkowe dla sprzętu elektronicznego:</h2>
+        <div class="form-group" style="width:100%">
+            <h3>Producent:</h3>
+            {{ form.producent }}
+            <h3>System:</h3>
+            {{ form.system }}
+            <h3>Przekątna ekranu:</h3>
+            {{ form.size }}
+            <h3>Pamięć wbudowana:</h3>
+            {{ form.memory }}
+        </div>
+    </div>
+    <input type='submit' value="Dodaj przedmiot" class='btn btn-primary' />
+    </form>
+</div>
+{% endblock %}
+
