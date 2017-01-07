@@ -11,15 +11,15 @@
     <br>
     <div class="row">
 
-        <div class="col-md-4" align="left">
+        <div class="col-md-4 sidebar" align="left">
 
             <h3>Kategorie</h3>
-            <ul style="font-size:16px">
-                <li><a href="{% url 'produkty:bizuteria_list' %}"> Biżuteria</a></li>
-                <li><a href="{% url 'produkty:telefony_list' %}"> Telefony </a></li>
-                <li><a href="{% url 'produkty:tablety_list' %}"> Tablety </a></li>
-                <li><a href="{% url 'produkty:laptopy_list' %}"> Laptopy </a></li>
-                <li><a href="{% url 'produkty:inne_list' %}"> Inne </a></li>
+            <ul style="font-size:16px" class="list-group">
+                <a href="{% url 'produkty:bizuteria_list' %}" class="list-group-item"> Biżuteria</a>
+                <a href="{% url 'produkty:telefony_list' %}"class="list-group-item" > Telefony </a>
+                <a href="{% url 'produkty:tablety_list' %}" class="list-group-item"> Tablety </a>
+                <a href="{% url 'produkty:laptopy_list' %}" class="list-group-item"> Laptopy </a>
+                <a href="{% url 'produkty:inne_list' %}" class="list-group-item"> Inne </a>
             </ul>
         </div>
 

@@ -12,12 +12,16 @@
     <div class="row">
     {% for opinie in object_list %}
 
-        <div class="col-md-6">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-body primary">
-                    Imie: {{ opinie.imie }}
-                </div>
-                <div class="panel-footer">{{ opinie.tresc }}</div>
+              <div class="panel-heading">
+                <h2 class="panel-title">{{ opinie.get_ocena_display }}</h2>
+              </div>
+              <div class="panel-body">
+                {{ opinie.tresc }}
+              </div>
+                <div class="panel-footer">{{ opinie.imie }}</div>
+            </div>
         </div>
 
     {% endfor %}
