@@ -7,4 +7,4 @@ from django.shortcuts import render
 
 class KontaktCreateView(CreateView):
     model = kontakt
-    fields = ['imie_i_nazwisko', 'email', 'telefon', 'miejscowosc', 'rodzaj_nieruchomosci', 'uwagi', ]
+    fields = ['imie_i_nazwisko', 'email', 'telefon', 'wiadomosc', ]
