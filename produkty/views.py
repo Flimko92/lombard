@@ -42,7 +42,7 @@ class LaptopyListView (ListView):
     template_name = 'produkty/laptopy_list.html'
 
 class InneListView (ListView):
-    queryset = product_detail.objects.filter(type_of_product='IN')
+    queryset = product_detail.objects.filter(type_of_product='IE')
     template_name = 'produkty/inne_list.html'
 
 class Product_detailDetailView (DetailView):
