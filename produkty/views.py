@@ -14,6 +14,16 @@ class Product_detailCreateView (CreateView):
     fields = ['nr_kat','name', 'type_of_product', 'producent', 'system', 'size', 'memory', 'type', 'material',
               'photo', 'desription', 'prize', 'count',
               ]
+class Product_detailUpdateView(UpdateView):
+    model = product_detail
+    fields = ['nr_kat','name', 'type_of_product', 'producent', 'system', 'size', 'memory', 'type', 'material',
+              'photo', 'desription', 'prize', 'count',
+    ]
+    template_name = 'produkty/product_detail_update_form.html'
+
+class Product_detailDeleteView(DeleteView):
+    model = product_detail
+    success_url = '/produkty/product_detail_list'
 
 class BizuteriaListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='BI')

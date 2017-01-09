@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^o_nas/', ONasTemplateView.as_view(), name='o_nas'),
     url(r'^kontakt/', include('formularz_kontaktowy.urls', namespace='kontakt')),
     url(r'^opinie/', include('opinie.urls', namespace='opinie')),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 

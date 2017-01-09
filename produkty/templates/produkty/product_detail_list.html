@@ -6,12 +6,12 @@
 
 <div class="container" align="center">
 
-    <a href="{% url 'produkty:product_detail_add' %}" class="btn btn-primary btn-lg" role="button">Dodaj produkt</a>
+    {% if perms.produkty %}<a href="{% url 'produkty:product_detail_add' %}" class="btn btn-success btn-lg" role="button">Dodaj produkt</a>{% endif %}
     <br>
     <br>
     <div class="row">
 
-        <div class="col-md-4 sidebar" align="left">
+        <div class="col-md-4" align="left">
 
             <h3>Kategorie</h3>
             <ul style="font-size:16px" class="list-group">
@@ -36,6 +36,12 @@
                     {% endif %}
                     <a href="{% url 'produkty:product_detail_detail' product_detail.id %}"><h4 align="left">{{ product_detail.get_producent_display }} {{ product_detail.name|truncatewords_html:1 }}</h4></a>
                     <p align="left">{{product_detail.prize}} zł</p>
+                    {% if perms.produkty %}
+                    <div class="btn-group-xs" role="group" aria-label="...">
+                        <a href="{% url 'produkty:product_detail_update' product_detail.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"> Edytuj</span></a>
+                        <a href="{% url 'produkty:product_detail_delete' product_detail.id %}" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"> Usuń</span></a>
+                    </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
