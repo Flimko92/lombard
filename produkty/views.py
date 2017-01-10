@@ -29,6 +29,42 @@ class BizuteriaListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='BI')
     template_name = 'produkty/bizuteria_list.html'
 
+class PierscionkiListView (ListView):
+    queryset = product_detail.objects.filter(type='P')
+    template_name = 'produkty/pierscionki_list.html'
+
+class KolczykiListView (ListView):
+    queryset = product_detail.objects.filter(type='K')
+    template_name = 'produkty/kolczyki_list.html'
+
+class NaszyjnikiListView (ListView):
+    queryset = product_detail.objects.filter(type='N')
+    template_name = 'produkty/naszyjniki_list.html'
+
+class BransoletkiListView (ListView):
+    queryset = product_detail.objects.filter(type='B')
+    template_name = 'produkty/bransoletki_list.html'
+
+class WisiorkiListView (ListView):
+    queryset = product_detail.objects.filter(type='W')
+    template_name = 'produkty/wisiorki_list.html'
+
+class LancuszkiListView (ListView):
+    queryset = product_detail.objects.filter(type='L')
+    template_name = 'produkty/lancuszki_list.html'
+
+class BroszkiListView (ListView):
+    queryset = product_detail.objects.filter(type='BR')
+    template_name = 'produkty/broszki_list.html'
+
+class ZlotoListView (ListView):
+    queryset = product_detail.objects.filter(material='Z')
+    template_name = 'produkty/zloto_list.html'
+
+class SrebroListView (ListView):
+    queryset = product_detail.objects.filter(type='SR')
+    template_name = 'produkty/srebro_list.html'
+
 class TelefonyListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='TE')
     template_name = 'produkty/telefony_list.html'
@@ -47,16 +83,3 @@ class InneListView (ListView):
 
 class Product_detailDetailView (DetailView):
     model = product_detail
-
-
-
-#Przykład
-
-# class ShotAddView (FormView):
-#     form_class = ShotForm
-#     template_name = 'produkty/shot_add.html'
-#     success_url = 'scene_detail'
-#
-#     def form_valid(self, form):
-#         form.save()
-#         return super(ShotAddView, self).form_valid(form)

@@ -21,10 +21,9 @@
 
     <style>
         .footer {
-        position: relative;
+        positon:relative;
         bottom: 0px;
         width: 100%;
-        height: 60px;
         background-color: #101010;
         }
     </style>
@@ -104,13 +103,32 @@
 {% endblock %}
 </div>
 
+    <br>
 
-    <footer class="footer">
-      <div class="container">
+<footer class="footer">
+      <div class="container-fluid">
+
           <br>
-          <p><a href="https://www.facebook.com/vipczestochowa">Facebook</a> <a href="https://twitter.com/VIP_Czestochowa">Twitter</a></p>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-1">
+                    <h4>O nas</h4>
+                    <p>
+                    info o nas itp.
+                </p></div>
+                <div class="col-md-3 col-md-offset-5">
+                    <h4>Dołącz do nas:</h4>
+                    <ul class="list-inline">
+                        <li><a href="https://www.facebook.com/vipczestochowa"><img src="/media/fb.png" class="img-responsive" height="45" width="45"> </a></li>
+                        <li><a href="http://www.twitter.com/VIP_Czestochowa"><img src="/media/twitter.png" class="img-responsive" height="45" width="45"> </a></li>
+
+                    </ul>
+
+                    </p>
+                </div>
+            </div>
+
       </div>
-    </footer>
+</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
