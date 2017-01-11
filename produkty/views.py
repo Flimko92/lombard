@@ -69,6 +69,18 @@ class TelefonyListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='TE')
     template_name = 'produkty/telefony_list.html'
 
+class IosListView (ListView):
+    queryset = product_detail.objects.filter(system='I')
+    template_name = 'produkty/ios_list.html'
+
+class AndroidListView (ListView):
+    queryset = product_detail.objects.filter(system='AD')
+    template_name = 'produkty/produkty_list.html'
+
+class WindowsListView (ListView):
+    queryset = product_detail.objects.filter(system='WI')
+    template_name = 'produkty/windows_list.html'
+
 class TabletyListView (ListView):
     queryset = product_detail.objects.filter(type_of_product='TA')
     template_name = 'produkty/tablety_list.html'

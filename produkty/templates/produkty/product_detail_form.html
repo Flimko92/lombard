@@ -11,7 +11,7 @@
 
     <form method="POST" action=""> {% csrf_token %}
     <div class="col-md-12">
-        <div class="form-group" style="width:40%">
+        <div class="form-group">
             {{ form.non_field_errors }}
             <h3>Numer katalogowy:</h3>
             {{ form.nr_kat.errors }}

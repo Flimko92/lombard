@@ -3,7 +3,8 @@ from django.conf.urls import url
 from views import (Product_detailListView, Product_detailDetailView, BizuteriaListView, TelefonyListView,
                    TabletyListView, LaptopyListView, InneListView, Product_detailCreateView, Product_detailDeleteView,
                    Product_detailUpdateView, PierscionkiListView, KolczykiListView, BransoletkiListView, BroszkiListView,
-                   LancuszkiListView, NaszyjnikiListView, WisiorkiListView, ZlotoListView, SrebroListView
+                   LancuszkiListView, NaszyjnikiListView, WisiorkiListView, ZlotoListView, SrebroListView, IosListView,
+                   AndroidListView, WindowsListView,
                   )
 
 urlpatterns = [
@@ -23,6 +24,9 @@ urlpatterns = [
     url(r'^zloto_list/$', ZlotoListView.as_view(), name='zloto_list'),
     url(r'^srebro_list/$', SrebroListView.as_view(), name='srebro_list'),
     url(r'^telefony_list/$', TelefonyListView.as_view(), name='telefony_list'),
+    url(r'^windows_list/$', WindowsListView.as_view(), name='windows_list'),
+    url(r'^ios_list/$', IosListView.as_view(), name='ios_list'),
+    url(r'^android_list/$', AndroidListView.as_view(), name='android_list'),
     url(r'^tablety_list/$', TabletyListView.as_view(), name='tablety_list'),
     url(r'^laptopy_list/$', LaptopyListView.as_view(), name='laptopy_list'),
     url(r'^inne_list/$', InneListView.as_view(), name='inne_list'),

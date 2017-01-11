@@ -21,6 +21,7 @@ class product_detail (models.Model):
 
     IOS = 'I'
     ANDROID = 'AD'
+    WINDOWS = 'WI'
 
     KOLCZYKI = 'K'
     PIERSCIONKI = 'P'
@@ -54,6 +55,7 @@ class product_detail (models.Model):
     SYSTEM_CHOICES = (
         (IOS, 'iOS'),
         (ANDROID, 'Android'),
+        (WINDOWS, 'Windows'),
     )
 
     TYPE_CHOICES = (
