@@ -9,11 +9,20 @@
     <div class="row">
 
         <div class="col-md-6" align="center">
-            {% if object.photo %}
-            <a href="{{object.photo.url}}"><img src="{{object.photo.url}}"  class="img-responsive" ></a><br>
+            {% if object.fotos %}
+            <a href="{{object.fotos.url}}" data-toggle="lightbox" data-title="A random title" data-footer="A custom footer text">><img src="{{object.fotos.url}}"  class="img-responsive" ></a><br>
             {% else %}
             <img src="/media/b.jpg" class="img-responsive"/><br>
             {% endif %}
+            <ul class="list-inline">
+            {% for zdjecia in object.photo.all %}
+
+                <li><img src="{{ zdjecia.foto.url }}" class="img-responsive" width="100" height="100"></li>
+                {% if not forloop.last %},{% endif %}
+            {% endfor %}
+            </ul>
+
+
         </div>
         <div class="col-md-6">
             <h2 align="left">{{object.get_producent_display}} {{object.name}}</h2>
@@ -39,10 +48,10 @@
                         <td>{{object.get_system_display}}</td>
                     </tr>
                     {% endif %}
-                    {% if object.size %}
+                    {% if object.inch %}
                     <tr>
                         <th>Przekątna ekranu:</th>
-                        <td>{{object.size}} "</td>
+                        <td>{{object.inch}} "</td>
                     </tr>
                     {% endif %}
                     {% if object.memory %}
@@ -63,9 +72,15 @@
                         <td>{{object.get_material_display}}</td>
                     </tr>
                     {% endif %}
+                    {% if object.size %}
+                    <tr>
+                        <th>Dostępne rozmiary:</th>
+                        <td>{{object.get_size_display}}</td>
+                    </tr>
+                    {% endif %}
                     <tr>
                         <th>Numer katalogowy:</th>
-                        <td>{{object.nr_kat}}</td>
+                        <td>{{object.id}}</td>
                     </tr>
                 </tbody>
             </table>

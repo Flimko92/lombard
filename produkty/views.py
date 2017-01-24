@@ -3,16 +3,34 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 from models import product_detail
-from django.db.models import Q
+from django.db.models import Q, F
+import operator
 
 
 class Product_detailListView (ListView):
     model = product_detail
+    paginate_by = 10
+
+    def get_queryset(self):
+        result = super(Product_detailListView, self).get_queryset()
+
+        query = self.request.GET.get('q')
+        if query:
+            query_list = query.split()
+            result = result.filter(
+                reduce(operator.and_,
+                       (Q(name__icontains=q) for q in query_list)) |
+                reduce(operator.and_,
+                       (Q(producent__icontains=q) for q in query_list))
+            )
+
+        return result
+
 
 class Product_detailCreateView (CreateView):
     model = product_detail
-    fields = ['nr_kat','name', 'type_of_product', 'producent', 'system', 'size', 'memory', 'type', 'material',
-              'photo', 'desription', 'prize', 'count',
+    fields = ['name', 'type_of_product', 'producent', 'system', 'inch', 'memory', 'type', 'material',
+              'fotos', 'desription', 'prize', 'count',
               ]
 class Product_detailUpdateView(UpdateView):
     model = product_detail
@@ -31,7 +49,7 @@ class BizuteriaListView (ListView):
 
 class PierscionkiListView (ListView):
     queryset = product_detail.objects.filter(type='P')
-    template_name = 'produkty/pierscionki_list.html'
+    template_name = 'produkty/bizuteria_list.html'
 
 class KolczykiListView (ListView):
     queryset = product_detail.objects.filter(type='K')
@@ -58,7 +76,28 @@ class BroszkiListView (ListView):
     template_name = 'produkty/broszki_list.html'
 
 class ZlotoListView (ListView):
-    queryset = product_detail.objects.filter(material='Z')
+    queryset = product_detail.objects.filter(
+        Q(material='ZŁOTO333')|
+        Q(material='ZŁOTO375')|
+        Q(material='ZŁOTO585')|
+        Q(material='ZŁOTO750')
+    )
+    template_name = 'produkty/zloto_list.html'
+
+class Zloto333ListView (ListView):
+    queryset = product_detail.objects.filter(material='Z3')
+    template_name = 'produkty/zloto_list.html'
+
+class Zloto375ListView (ListView):
+    queryset = product_detail.objects.filter(material='Z7')
+    template_name = 'produkty/zloto_list.html'
+
+class Zloto585ListView (ListView):
+    queryset = product_detail.objects.filter(material='Z5')
+    template_name = 'produkty/zloto_list.html'
+
+class Zloto750ListView (ListView):
+    queryset = product_detail.objects.filter(material='Z0')
     template_name = 'produkty/zloto_list.html'
 
 class SrebroListView (ListView):

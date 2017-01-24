@@ -3,8 +3,8 @@ from django.conf.urls import url
 from views import (Product_detailListView, Product_detailDetailView, BizuteriaListView, TelefonyListView,
                    TabletyListView, LaptopyListView, InneListView, Product_detailCreateView, Product_detailDeleteView,
                    Product_detailUpdateView, PierscionkiListView, KolczykiListView, BransoletkiListView, BroszkiListView,
-                   LancuszkiListView, NaszyjnikiListView, WisiorkiListView, ZlotoListView, SrebroListView, IosListView,
-                   AndroidListView, WindowsListView,
+                   LancuszkiListView, NaszyjnikiListView, WisiorkiListView, Zloto333ListView, Zloto375ListView, Zloto585ListView,
+                   Zloto750ListView, SrebroListView, IosListView, AndroidListView, WindowsListView, ZlotoListView
                   )
 
 urlpatterns = [
@@ -22,6 +22,10 @@ urlpatterns = [
     url(r'^naszyjniki_list/$', NaszyjnikiListView.as_view(), name='naszyjniki_list'),
     url(r'^wisiorki_list/$', WisiorkiListView.as_view(), name='wisiorki_list'),
     url(r'^zloto_list/$', ZlotoListView.as_view(), name='zloto_list'),
+    url(r'^zloto_list/333/$', Zloto333ListView.as_view(), name='zloto_list_333'),
+    url(r'^zloto_list/375/$', Zloto375ListView.as_view(), name='zloto_list_375'),
+    url(r'^zloto_list/585/$', Zloto585ListView.as_view(), name='zloto_list_585'),
+    url(r'^zloto_list/750/$', Zloto750ListView.as_view(), name='zloto_list_750'),
     url(r'^srebro_list/$', SrebroListView.as_view(), name='srebro_list'),
     url(r'^telefony_list/$', TelefonyListView.as_view(), name='telefony_list'),
     url(r'^windows_list/$', WindowsListView.as_view(), name='windows_list'),

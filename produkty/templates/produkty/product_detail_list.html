@@ -48,13 +48,16 @@
         </div>
 
         <div class="col-md-8">
-
+            <form method='GET' action=''>
+            <input type='text' name='q' placeholder='Search posts' value='{{ request.GET.q }}'/>
+            <input type='submit' value='Search' />
+            </form>
 
             <div class="row">
                 {% for product_detail in object_list %}
                 <div class="col-md-3">
-                    {% if product_detail.photo %}
-                    <a href="{% url 'produkty:product_detail_detail' product_detail.id %}" class="thumbnail"> <img src="{{product_detail.photo.url}}"  class="img-responsive"></a>
+                    {% if product_detail.fotos %}
+                    <a href="{% url 'produkty:product_detail_detail' product_detail.id %}" class="thumbnail"> <img src="{{product_detail.fotos.url}}"  class="img-responsive"></a>
                     {% else %}
                     <a href="{% url 'produkty:product_detail_detail' product_detail.id %}" class="thumbnail"> <img src="/media/b.jpg" class="img-responsive" ></a>
                     {% endif %}

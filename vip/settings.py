@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    'multiselectfield',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 
     'bootstrap3',
     'crispy_forms',
+    'django_extensions',
 
 
 ]
@@ -150,5 +152,6 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 LOGIN_REDIRECT_URL = 'home_page'

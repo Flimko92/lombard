@@ -11,6 +11,7 @@
 	{% bootstrap_css %}
 	{% bootstrap_javascript %}
     <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
+    <link href="view-source:http://getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <style>
       #map {
@@ -20,8 +21,17 @@
     </style>
 
     <style>
+        html {
+              position: relative;
+              min-height: 100%;
+            }
+        body {
+              /* Margin bottom by footer height */
+              margin-bottom: 0px;
+            }
+
         .footer {
-        positon:relative;
+        positon:absolute;
         bottom: 0px;
         width: 100%;
         background-color: #101010;

@@ -13,14 +13,10 @@
     <div class="col-md-12">
         <div class="form-group">
             {{ form.non_field_errors }}
-            <h3>Numer katalogowy:</h3>
-            {{ form.nr_kat.errors }}
-            {{ form.nr_kat }}
-            <br>
             <h3>Nazwa produktu</h3>
             {{ form.name }}
             <h3>Zdjęcie</h3>
-            {{ form.photo }}
+            {{ form.fotos }}
             <h3>Opis</h3>
             {{ form.desription }}
             <h3>Cena</h3>
@@ -48,7 +44,7 @@
             <h3>System:</h3>
             {{ form.system }}
             <h3>Przekątna ekranu:</h3>
-            {{ form.size }}
+            {{ form.inch }}
             <h3>Pamięć wbudowana:</h3>
             {{ form.memory }}
         </div>
